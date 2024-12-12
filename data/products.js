@@ -71,15 +71,13 @@ export function loadProductsFetch() {
         return new Product(productDetails);
       });
       console.log('load products');
-    });
+    })
   return promise;
 }
 
-loadProductsFetch().then(() => {
-  console.log('next Step');
-});
+loadProductsFetch()
 
-/*
+
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', () => {
@@ -95,7 +93,7 @@ export function loadProducts(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/products', true);
   xhr.send();
 }
-*/
+
 
 
 /*
