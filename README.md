@@ -45,6 +45,8 @@ This project is a simplified version of the Amazon website, developed using vani
 ![Orders Page](images/screenshots/orders_page.png)
 *Orders Page*
 
+![Track Page](images/screenshots/tracking_page.png)
+*Tracking Page*
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
