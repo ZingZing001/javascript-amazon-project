@@ -3,9 +3,10 @@ export let cart;
 loadFromStorage();
 
 export function loadFromStorage() {
+  let firstTime = true;
   cart = JSON.parse(localStorage.getItem('cart'));
 
-  if (!cart) {
+  if (!cart && firstTime) {
     cart = [{
       productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
       quantity: 2,
@@ -16,6 +17,7 @@ export function loadFromStorage() {
       deliveryOptionId: '2'
     }];
   }
+  firstTime = false;
 }
 
 function saveToStorage() {
@@ -81,3 +83,4 @@ export function loadCart(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/cart');
   xhr.send();
 }
+

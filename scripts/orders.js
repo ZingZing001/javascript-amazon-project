@@ -2,6 +2,7 @@ import { getProduct } from "../data/products.js";
 import { orders } from "../data/order.js";
 import { formatCurrency } from './utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import { updateCartUI } from "./amazon.js";
 
 function renderOrderHistory() {
   let orderSummaryHTML = '';
@@ -81,3 +82,4 @@ function renderOrderHistory() {
 }
 
 renderOrderHistory();
+updateCartUI();
