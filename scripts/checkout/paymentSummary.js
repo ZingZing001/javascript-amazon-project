@@ -1,4 +1,4 @@
-import { cart } from '../../data/cart.js';
+import { cart, removeFromCart } from '../../data/cart.js';
 import { getProduct } from '../../data/products.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { formatCurrency } from '../utils/money.js';
@@ -85,10 +85,13 @@ export function renderPaymentSummary() {
       });
       const order = await response.json();
       addOrders(order);
-
     } catch (err) {
       console.log(err);
     }
+    cart.forEach((cartItem) => {
+      const product = getProduct(cartItem.productId);
+      removeFromCart(product.id);
+    });
     window.location.href = 'orders.html';
   });
 }
