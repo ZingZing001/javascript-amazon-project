@@ -156,26 +156,87 @@
 }
 
 .search-dropdown {
-  color: black;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ddd;
-  max-height: 200px;
-  overflow-y: auto;
-  width: 100%;
-  z-index: 1000;
-  position: flex;
-  display: none;
   top: 50px;
-  padding-top: 10x;
+  position: absolute;
+  background-color: #fff;
+  /* Clean white background */
+  border: 1px solid #e0e0e0;
+  /* Subtle border for separation */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Add depth */
+  max-height: 300px;
+  /* Limit height for large results */
+  overflow-y: auto;
+  /* Enable scrolling for many results */
+  width: 100%;
+  /* Match the search bar width */
+  border-radius: 8px;
+  /* Smooth corners */
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+  display: none;
   /* Hidden by default */
 }
 
 .search-dropdown .search-item {
-  padding: 10px;
+  display: flex;
+  /* Align image and text horizontally */
+  align-items: center;
+  /* Center vertically */
+  padding: 12px;
+  /* Space around items */
   cursor: pointer;
+  /* Pointer cursor for clickability */
+  font-family: 'Roboto', sans-serif;
+  /* Consistent typography */
+  transition: background-color 0.2s ease;
+  /* Smooth hover effect */
+}
+
+.search-dropdown .search-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  /* Rounded corners for images */
+  margin-right: 10px;
+  /* Spacing between image and text */
+}
+
+.search-dropdown .search-item span {
+  flex-grow: 1;
+  /* Allow text to take up remaining space */
+  font-size: 14px;
+  /* Maintain legibility */
+  color: #333;
+  /* Dark text for readability */
 }
 
 .search-dropdown .search-item:hover {
-  background-color: rgb(225, 224, 224);
+  background-color: #f9f9f9;
+  /* Subtle hover effect */
+}
+
+.search-dropdown .search-item+.search-item {
+  border-top: 1px solid #e0e0e0;
+  /* Divider between items */
+}
+
+.search-dropdown .no-results {
+  padding: 12px;
+  text-align: center;
+  color: #000000;
+  /* Subtle text for "No results found" */
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .search-dropdown {
+    max-height: 200px;
+    font-size: 12px;
+  }
+
+  .search-dropdown .search-item img {
+    width: 30px;
+    height: 30px;
+  }
 }
