@@ -75,7 +75,7 @@ export function loadProductsFetch() {
   return promise;
 }
 
-loadProductsFetch()
+await loadProductsFetch()
 
 
 export function loadProducts(fun) {
