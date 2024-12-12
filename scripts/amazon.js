@@ -85,6 +85,50 @@ function renderProductsGrid() {
       updateCartUI();
     });
   });
+  document.querySelector('.js-search-bar').addEventListener('input', (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    const dropdown = document.querySelector('.js-search-dropdown');
+
+    if (!searchTerm) {
+      dropdown.style.display = 'none';
+      return;
+    }
+
+    // Filter products based on the search term
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm)
+    );
+
+    // Generate the dropdown HTML
+    let dropdownHTML = '';
+    filteredProducts.forEach((product) => {
+      dropdownHTML += `
+        <div class="search-item" data-product-id="${product.id}">
+          <img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px; margin-right: 10px;">
+          <span>${product.name}</span>
+        </div>
+      `;
+    });
+
+    if (filteredProducts.length > 0) {
+      dropdown.innerHTML = dropdownHTML;
+      dropdown.style.display = 'block';
+    } else {
+      dropdown.innerHTML = '<div class="search-item">No results found</div>';
+      dropdown.style.display = 'block';
+    }
+
+    // Handle clicking on a search item
+    document.querySelectorAll('.search-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const productId = item.dataset.productId;
+
+        // Redirect to the product page or perform an action
+        console.log(`Selected product ID: ${productId}`);
+        // Optional: Implement navigation or preview behavior here
+      });
+    });
+  });
 }
 
 export function updateCartUI() {

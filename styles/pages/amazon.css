@@ -154,3 +154,28 @@
   padding: 8px;
   border-radius: 50px;
 }
+
+.search-dropdown {
+  color: black;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+  position: flex;
+  display: none;
+  top: 50px;
+  padding-top: 10x;
+  /* Hidden by default */
+}
+
+.search-dropdown .search-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown .search-item:hover {
+  background-color: rgb(225, 224, 224);
+}
