@@ -76,12 +76,23 @@ function renderProductsGrid() {
       .innerHTML = cartQuantity;
   }
 
-  document.querySelectorAll('.js-add-to-cart')
-    .forEach((button) => {
-      button.addEventListener('click', () => {
-        const productId = button.dataset.productId;
-        addToCart(productId);
-        updateCartQuantity();
-      });
+  document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+
+      // Find the corresponding product container
+      const productContainer = button.closest('.product-container');
+
+      // Get the selected quantity from the dropdown
+      const quantity = parseInt(
+        productContainer.querySelector('.product-quantity-container select').value
+      );
+
+      // Add the product to the cart with the specified quantity
+      addToCart(productId, quantity);
+
+      // Update the cart quantity display
+      updateCartQuantity();
     });
+  });
 }
