@@ -118,14 +118,23 @@ function renderProductsGrid() {
       dropdown.style.display = 'block';
     }
 
-    // Handle clicking on a search item
     document.querySelectorAll('.search-item').forEach((item) => {
       item.addEventListener('click', () => {
         const productId = item.dataset.productId;
+        dropdown.style.display = 'none';
+        // Find the corresponding product container
+        const productContainer = document.querySelector(
+          `.product-container [data-product-id="${productId}"]`
+        ).closest('.product-container');
 
-        // Redirect to the product page or perform an action
-        console.log(`Selected product ID: ${productId}`);
-        // Optional: Implement navigation or preview behavior here
+        // Highlight the product
+        productContainer.classList.add('highlight');
+        setTimeout(() => {
+          productContainer.classList.remove('highlight');
+        }, 2000); // Highlight lasts for 2 seconds
+
+        // Scroll to the product
+        productContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     });
   });
