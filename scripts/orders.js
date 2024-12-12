@@ -35,7 +35,7 @@ function renderOrderHistory() {
           </button>
         </div>
         <div class="product-actions">
-          <a href="tracking.html">
+          <a href="tracking.html?track-orderId=${order.id}&itemId=${item.id}">
             <button class="track-package-button button-secondary">
               Track package
             </button>
@@ -80,6 +80,7 @@ function renderOrderHistory() {
   // Render all orders into the orders grid
   document.querySelector(`.js-order-containers`).innerHTML = orderSummaryHTML;
 }
+
 
 renderOrderHistory();
 updateCartUI();
