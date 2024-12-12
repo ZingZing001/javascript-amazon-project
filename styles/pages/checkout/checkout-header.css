@@ -1,17 +1,16 @@
 .checkout-header {
-  height: 60px;
-  padding-left: 30px;
-  padding-right: 30px;
-  background-color: white;
-
+  background-color: rgb(19, 25, 33);
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
-  justify-content: center;
-
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  height: 60px;
 }
 
 .header-content {
@@ -68,9 +67,9 @@
 }
 
 .return-to-home-link {
-  color: rgb(0, 113, 133);
+  color: rgb(240, 136, 4);
   font-size: 23px;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
