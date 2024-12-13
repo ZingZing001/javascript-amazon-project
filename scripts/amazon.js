@@ -52,8 +52,8 @@ function renderProductsGrid() {
       <div class="product-spacer"></div>
 
       <div class="js-confirmation">
-        <img src="images/icons/checkmark.png" alt="checkmark">
-        <p style="color: rgb(6, 125, 98)"> Added to cart!</p>
+        <img class="confirmation-icon" src="images/icons/checkmark.png" alt="checkmark">
+        <p style="color: rgb(6, 125, 98)" class="confirmation-text">Added to cart!</p>
       </div>
 
       <button class="add-to-cart-button button-primary js-add-to-cart"
@@ -86,7 +86,7 @@ function renderProductsGrid() {
 
       // Show confirmation message
       const confirmationElement = productContainer.querySelector('.js-confirmation');
-      confirmationElement.style.display = 'flex'; // Show the element
+      confirmationElement.style.display = 'flex'; // Add the element back to the layout
       confirmationElement.style.opacity = '1'; // Make it visible
 
       // Hide the confirmation message after 2 seconds

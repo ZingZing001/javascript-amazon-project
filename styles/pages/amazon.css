@@ -2,16 +2,6 @@
   margin-top: 60px;
 }
 
-.js-confirmation {
-  color: rgb(6, 125, 98);
-  font-size: 14px;
-  display: none;
-  /* Hide the element and remove it from layout */
-  align-items: center;
-  margin-top: 8px;
-  transition: opacity 0.5s ease;
-  /* Smooth transition for visibility */
-}
 
 .products-grid {
   display: grid;
@@ -250,6 +240,38 @@
   background-color: #fffbea;
   /* Light yellow background for contrast */
   transition: outline 0.3s ease, background-color 0.3s ease;
+}
+
+/* Confirmation message container */
+.js-confirmation {
+  display: none;
+  /* Start hidden */
+  align-items: center;
+  padding-bottom: 5px;
+  font-size: 15px;
+  /* Default font size */
+  transition: opacity 0.5s ease;
+  /* Smooth fade-in and fade-out */
+}
+
+/* Icon styling */
+.js-confirmation .confirmation-icon {
+  width: 12px;
+  /* Adjust size as needed */
+  height: 12px;
+  /* Adjust size as needed */
+  margin-right: 15px;
+  /* Space between icon and text */
+}
+
+/* Text styling */
+.js-confirmation .confirmation-text {
+  color: rgb(6, 125, 98);
+  /* Green color */
+  font-weight: 500;
+  /* Slightly bold text */
+  font-family: 'Roboto', sans-serif;
+  /* Consistent font */
 }
 
 
