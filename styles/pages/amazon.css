@@ -2,6 +2,17 @@
   margin-top: 60px;
 }
 
+.js-confirmation {
+  color: rgb(6, 125, 98);
+  font-size: 14px;
+  display: none;
+  /* Hide the element and remove it from layout */
+  align-items: center;
+  margin-top: 8px;
+  transition: opacity 0.5s ease;
+  /* Smooth transition for visibility */
+}
+
 .products-grid {
   display: grid;
 
@@ -16,6 +27,8 @@
        display: grid; */
   grid-template-columns: repeat(8, 1fr);
 }
+
+
 
 /* @media is used to create responsive design (making the
    website look good on any screen size). This @media
@@ -238,6 +251,8 @@
   /* Light yellow background for contrast */
   transition: outline 0.3s ease, background-color 0.3s ease;
 }
+
+
 
 @media (max-width: 768px) {
   .search-dropdown {

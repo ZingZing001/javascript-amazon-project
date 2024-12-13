@@ -51,6 +51,10 @@ function renderProductsGrid() {
 
       <div class="product-spacer"></div>
 
+      <div class="js-confirmation">
+        <img src="images/icons/checkmark.png" alt="checkmark">
+        <p style="color: rgb(6, 125, 98)"> Added to cart!</p>
+      </div>
       <div class="added-to-cart">
         <img src="images/icons/checkmark.png">
         Added
@@ -83,6 +87,19 @@ function renderProductsGrid() {
 
       // Update the cart quantity display
       updateCartUI();
+
+      // Show confirmation message
+      const confirmationElement = productContainer.querySelector('.js-confirmation');
+      confirmationElement.style.display = 'flex'; // Show the element
+      confirmationElement.style.opacity = '1'; // Make it visible
+
+      // Hide the confirmation message after 2 seconds
+      setTimeout(() => {
+        confirmationElement.style.opacity = '0'; // Start fading out
+        setTimeout(() => {
+          confirmationElement.style.display = 'none'; // Fully hide and remove space after fade-out
+        }, 500); // Match the CSS transition duration (0.5s)
+      }, 2000);
     });
   });
   document.querySelector('.js-search-bar').addEventListener('input', (event) => {
