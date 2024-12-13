@@ -55,10 +55,6 @@ function renderProductsGrid() {
         <img src="images/icons/checkmark.png" alt="checkmark">
         <p style="color: rgb(6, 125, 98)"> Added to cart!</p>
       </div>
-      <div class="added-to-cart">
-        <img src="images/icons/checkmark.png">
-        Added
-      </div>
 
       <button class="add-to-cart-button button-primary js-add-to-cart"
       data-product-id="${product.id}">
